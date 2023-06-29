@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/icons.css" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/780553c0d7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Weather</h2>
+      <form class="search-form" id="search-form">
+      <div class="row">
+        <div class="search-field col-sm-10">
+          <input
+            type="text"
+            id="city-input"
+            class="form-control"
+            placeholder="Enter a city..."
+            autofocus="on"
+            autocomplete="off"
+          />
+        </div>
+        <div class="col-sm-2">
+          <input type="submit" value="Search" class="form-control btn"></button>
+        </div>
+      </div>
+      </form>
+      <div class="row location">
+        <div class="col-sm-4">
+          <button id="current-location" class="location-button">▹ Use my current location</button>
+        </div>
+        <div class="temp-units col-sm-8"><h4><a href="#" id="celsius-link">°C</a> | <a href="#" id="farenheit-link">°F</a></h4></div>
+      </div>
+      <div class="row weather-today">
+        <div class="col-sm-5">
+          <h1 id="city">London</h1>
+          <h4 id="current-day-time">Day time</h4>
+          <h4 id="current-weather">Cloudy</h4>
+          <p id="humidity">Humidity: 27%</p>
+          <p id="wind">Wind: 8 mph</p>
+        </div>
+        <div class="col-sm-3 weather-graphic">
+          <i class="icon-wi_cloudy" alt="cloudy"></i>
+        </div>
+        <div class="todaytemp col-sm-4">
+          <p id="main-temp" class="main-temp">22°C</p>
+          <h5 class="main-high-low"><strong>High 27°C</strong> Low 15°C</h5>
+        </div>
+      </div>
+      <div class="row forecast">
+        <div class="day-one col-sm-2">
+          <p>Friday</p>
+          <i class="icon-wi_cloudy" alt="cloudy"></i>
+          <p class="forecast-high-low"><strong>27°C</strong> 15°C</p>
+        </div>
+        <div class="day-two col-sm-2">
+          <p>Saturday</p>
+          <i class="icon-wi_drizzle" alt="drizzle"></i>
+          <p class="forecast-high-low"><strong>27°C</strong> 15°C</p>
+        </div>
+        <div class="day-three col-sm-2">
+          <p>Sunday</p>
+          <i class="icon-wi_partly-sunny" alt="partly sunny"></i>
+          <p class="forecast-high-low"><strong>27°C</strong> 15°C</p>
+        </div>
+        <div class="day-four col-sm-2">
+          <p>Monday</p>
+          <i class="icon-wi_sunny" alt="sunny"></i>
+          <p class="forecast-high-low"><strong>27°C</strong> 15°C</p>
+        </div>
+        <div class="day-five col-sm-2">
+          <p>Tuesday</p>
+          <i class="icon-wi_hail" alt="hail"></i>
+          <p class="forecast-high-low"><strong>27°C</strong> 15°C</p>
+        </div>
+        <div class="day-six col-sm-2">
+          <p>Wednesday</p>
+          <i class="icon-wi_rain" alt="rain"></i>
+          <p class="forecast-high-low"><strong>27°C</strong> 15°C</p>
+        </div>
+      </div>
+      <div class="message">
+        <span>
+          <p>Don't forget your</p>
+          <i class="icon-wi_sunglasses" alt="sunglasses"></i>
+        </span>
+      </div>
+      <div class="coded-by">
+        <small>
+          This project was coded by Sue McMillan using HTML, CSS, Bootstrap and
+          Javascript.
+        </small>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
