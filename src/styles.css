@@ -1,0 +1,235 @@
+/* icons */
+.icon-wi_barometer:before {
+  content: "\e900";
+}
+.icon-wi_clear-night:before {
+  content: "\e901";
+}
+.icon-wi_cloudy:before {
+  content: "\e902";
+  font-size: 85px;
+}
+.icon-wi_coat:before {
+  content: "\e903";
+}
+.icon-wi_drizzle:before {
+  content: "\e904";
+  font-size: 85px;
+}
+.icon-wi_eclipse:before {
+  content: "\e905";
+}
+.icon-wi_fog:before {
+  content: "\e906";
+}
+.icon-wi_hail:before {
+  content: "\e907";
+  font-size: 85px;
+}
+.icon-wi_lightning:before {
+  content: "\e909";
+}
+.icon-wi_intense-snow:before {
+  content: "\e90a";
+}
+.icon-wi_high-temp:before {
+  content: "\e90b";
+}
+.icon-wi_mostly-sunny:before {
+  content: "\e90c";
+  font-size: 85px;
+}
+.icon-wi_low-temp:before {
+  content: "\e90d";
+}
+.icon-wi_night-drizzle:before {
+  content: "\e90e";
+}
+.icon-wi_night-showers:before {
+  content: "\e90f";
+}
+.icon-wi_night-snow:before {
+  content: "\e910";
+}
+.icon-wi_partly-cloudy-night:before {
+  content: "\e911";
+}
+.icon-wi_rain-showers:before {
+  content: "\e912";
+}
+.icon-wi_partly-sunny:before {
+  content: "\e913";
+  font-size: 85px;
+}
+.icon-wi_rain:before {
+  content: "\e914";
+  font-size: 85px;
+}
+.icon-wi_rainbow:before {
+  content: "\e915";
+}
+.icon-wi_sleet:before {
+  content: "\e916";
+}
+.icon-wi_snow-sunny:before {
+  content: "\e917";
+}
+.icon-wi_snowflake:before {
+  content: "\e918";
+}
+.icon-wi_snow:before {
+  content: "\e919";
+}
+.icon-wi_stormy-night:before {
+  content: "\e91a";
+}
+.icon-wi_sunglasses:before {
+  content: "\e91b";
+  font-size: 72px;
+}
+.icon-wi_sunny:before {
+  content: "\e91c";
+  font-size: 85px;
+}
+.icon-wi_sunrise:before {
+  content: "\e91d";
+}
+.icon-wi_uv:before {
+  content: "\e91e";
+}
+.icon-wi_sunscreen:before {
+  content: "\e91f";
+}
+.icon-wi_sunset:before {
+  content: "\e920";
+}
+.icon-wi_thunderstorm:before {
+  content: "\e921";
+}
+.icon-wi_tornado:before {
+  content: "\e922";
+}
+.icon-wi_umbrella:before {
+  content: "\e923";
+}
+.icon-wi_wind:before {
+  content: "\e924";
+}
+/* My CSS */
+
+p {
+  margin-bottom: 0;
+  color: #00204a;
+}
+h5 {
+  font-size: 18px;
+  color: #00204a;
+}
+h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  color: #005792;
+}
+h2 {
+  color: #fdb44b;
+}
+h4 {
+  color: #fdb44b;
+  line-height: 1;
+}
+.container {
+  margin: 40px auto;
+  padding: 30px 20px;
+  max-width: 800px;
+  border: 1px solid #00bbf0;
+  border-radius: 5px;
+}
+.btn {
+  background: #00bbf0;
+  padding: 7px 28px;
+  color: #ffffff;
+  border: 1px solid #00bbf0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #02acdb;
+  transition: all 150ms ease-in-out;
+}
+.city-search {
+  padding-bottom: 20px;
+}
+.location-button {
+  margin: 10px 0 20px 0;
+  padding: 7px 20px;
+  background: #00bbf0;
+  color: #ffffff;
+  border: 1px solid #00bbf0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.location-button:hover {
+  background: #02acdb;
+  transition: all 150ms ease-in-out;
+}
+.temp-units {
+  display: flex;
+  justify-content: right;
+  padding: 20px;
+}
+.temp-units a {
+  text-decoration: none;
+  color: #fdb44b;
+}
+.temp-units a:hover {
+  text-decoration: none;
+  color: #005792;
+}
+.weather-graphic .icon-wi_cloudy:before {
+  font-size: 200px;
+  color: #00bbf0;
+}
+.main-temp {
+  font-size: 75px;
+  margin-top: 30px;
+  padding: 0 30px;
+  color: #005792;
+}
+.main-high-low {
+  padding: 0 30px;
+  color: #005792;
+}
+.forecast {
+  margin: 30px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  max-width: 800px;
+  color: #005792;
+}
+.forecast i {
+  font-size: 50px;
+  padding: 10px 0;
+}
+.day-one .day-two .day-three .day-four .day-five .day-six {
+  text-align: center;
+}
+.message {
+  text-align: center;
+  padding: 25px 0 0 0;
+  font-size: 24px;
+  font-style: italic;
+  color: #fdb44b;
+}
+.message p {
+  color: #fdb44b;
+}
+.coded-by {
+  text-align: center;
+  font-size: 13px;
+  color: dimgray;
+}
+.form-control {
+  border: 1px solid rgb(172, 172, 172);
+  cursor: pointer;
+}
