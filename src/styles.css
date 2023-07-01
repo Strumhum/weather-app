@@ -238,3 +238,6 @@ h4 {
 .weather-graphic {
   padding-right: 0;
 }
+.high-temp {
+  font-weight: bold;
+}
