@@ -66,8 +66,15 @@ function displayWeather(response) {
   let windElement = document.querySelector("#wind");
   let currentWeatherElement = document.querySelector("#current-weather");
   let weatherIconElement = document.querySelector("#main-icon");
+  let highTempElement = document.querySelector("#main-high-temp");
+  let lowTempElement = document.querySelector("#main-low-temp");
 
   celsiusTemp = response.data.main.temp;
+
+  // main high and low temps
+  mainHighTemp = response.data.main.temp_max;
+  mainLowTemp = response.data.main.temp_min;
+
   let currentWeather = response.data.weather[0].main;
 
   temperatureElement.innerHTML = Math.round(celsiusTemp) + "ºC";
@@ -76,6 +83,8 @@ function displayWeather(response) {
   windElement.innerHTML =
     "Wind: " + Math.round(response.data.wind.speed) + " km/h";
   currentWeatherElement.innerHTML = currentWeather;
+  highTempElement.innerHTML = "High " + Math.round(mainHighTemp) + "ºC";
+  lowTempElement.innerHTML = "Low " + Math.round(mainLowTemp) + "ºC";
 
   // changing main weather icon by class
   weatherIconElement.className = "icon-wi_cloudy";
@@ -118,6 +127,7 @@ function tempToCelsius(event) {
 }
 
 let celsiusTemp = null;
+let highTemp = null;
 
 // city search engine
 let searchForm = document.querySelector("#search-form");
