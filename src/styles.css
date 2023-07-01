@@ -7,7 +7,6 @@
 }
 .icon-wi_cloudy:before {
   content: "\e902";
-  font-size: 85px;
 }
 .icon-wi_coat:before {
   content: "\e903";
@@ -115,6 +114,9 @@
 .icon-wi_wind:before {
   content: "\e924";
 }
+.default-icon-class {
+  content: "\e90c";
+}
 /* My CSS */
 
 p {
@@ -185,10 +187,6 @@ h4 {
   text-decoration: none;
   color: #005792;
 }
-.weather-graphic .icon-wi_cloudy:before {
-  font-size: 200px;
-  color: #00bbf0;
-}
 .main-temp {
   font-size: 75px;
   margin-top: 30px;
@@ -208,7 +206,7 @@ h4 {
   color: #005792;
 }
 .forecast i {
-  font-size: 50px;
+  font-size: 85px;
   padding: 10px 0;
 }
 .day-one .day-two .day-three .day-four .day-five .day-six {
@@ -232,4 +230,11 @@ h4 {
 .form-control {
   border: 1px solid rgb(172, 172, 172);
   cursor: pointer;
+}
+#main-icon:before {
+  font-size: 170px;
+  color: #00bbf0;
+}
+.weather-graphic {
+  padding-right: 0;
 }
