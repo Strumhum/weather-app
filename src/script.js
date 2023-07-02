@@ -192,20 +192,6 @@ function displayWeather(response) {
   }
 }
 
-// changing units of temperature by links
-function tempToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#main-temp");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp) + "ºF";
-}
-
-function tempToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#main-temp");
-  temperatureElement.innerHTML = Math.round(celsiusTemp) + "ºC";
-}
-
 let celsiusTemp = null;
 let highTemp = null;
 
@@ -221,12 +207,5 @@ currentLocation.addEventListener("click", getCurrentLocation);
 let dateElement = document.querySelector("#current-day-time");
 let currentTime = new Date();
 dateElement.innerHTML = showDate(currentTime);
-
-// celsius and fahrenheit option
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", tempToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", tempToCelsius);
 
 searchCity("London");
