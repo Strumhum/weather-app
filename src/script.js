@@ -22,6 +22,22 @@ function showDate(date) {
   return "".concat(day, " ").concat(hours, ":").concat(minutes);
 }
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
 // get city by user input - city search
 function searchCity(city) {
   let weatherIconElement = document.querySelector("#main-icon");
@@ -58,6 +74,45 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row forecast">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      let formattedDay = formatForecastDay(forecastDay.dt);
+      let highTemp = Math.round(forecastDay.temp.max);
+      let lowTemp = Math.round(forecastDay.temp.min);
+      let dailyWeather = forecastDay.weather[0].main;
+      let forecastIconElement =
+        document.querySelectorAll(".forecast-icon")[index];
+
+      forecastHTML =
+        forecastHTML +
+        `<div class="day col-sm-2">
+            <div class="forecast-day">${formattedDay}</div>
+            <i class="forecast-icon" alt="cloudy"></i>
+            <p class="forecast-high-low">
+              <span class="high-temp">${highTemp}°C</span>
+              <span class="low-temp">${lowTemp}°C</span>
+            </p>
+          </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "1a2b7258ebd456c01aef9175dfe8b709";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // display weather data on page for city
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#main-temp");
@@ -85,6 +140,8 @@ function displayWeather(response) {
   currentWeatherElement.innerHTML = currentWeather;
   highTempElement.innerHTML = "High " + Math.round(mainHighTemp) + "ºC";
   lowTempElement.innerHTML = "Low " + Math.round(mainLowTemp) + "ºC";
+
+  getForecast(response.data.coord);
 
   // changing main weather icon by class
   weatherIconElement.className = "icon-wi_cloudy";
