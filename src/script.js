@@ -127,7 +127,6 @@ function getForecastIconClass(dailyWeather) {
   } else {
     return "icon-wi_mostly-sunny"; // Return mostly sunny icon if the weather condition is not recognized
   }
-  console.log(dailyWeather);
 }
 
 function getForecast(coordinates) {
