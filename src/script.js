@@ -74,6 +74,7 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 
+// display data for 6 day forecast and inject HTML for each day
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -102,7 +103,7 @@ function displayForecast(response) {
   forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+// changing icon for each day dependent on data
 function getForecastIconClass(dailyWeather) {
   if (dailyWeather === "Clear") {
     return "icon-wi_sunny";
@@ -129,6 +130,7 @@ function getForecastIconClass(dailyWeather) {
   }
 }
 
+// get forecast data via One Call API
 function getForecast(coordinates) {
   let apiKey = "1a2b7258ebd456c01aef9175dfe8b709";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
