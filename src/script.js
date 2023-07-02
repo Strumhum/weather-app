@@ -76,7 +76,6 @@ function getCurrentLocation(event) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row forecast">`;
@@ -87,23 +86,48 @@ function displayForecast(response) {
       let highTemp = Math.round(forecastDay.temp.max);
       let lowTemp = Math.round(forecastDay.temp.min);
       let dailyWeather = forecastDay.weather[0].main;
-      let forecastIconElement =
-        document.querySelectorAll(".forecast-icon")[index];
+      let forecastIconClass = getForecastIconClass(dailyWeather);
 
-      forecastHTML =
-        forecastHTML +
-        `<div class="day col-sm-2">
-            <div class="forecast-day">${formattedDay}</div>
-            <i class="forecast-icon" alt="cloudy"></i>
-            <p class="forecast-high-low">
-              <span class="high-temp">${highTemp}°C</span>
-              <span class="low-temp">${lowTemp}°C</span>
-            </p>
-          </div>`;
+      forecastHTML += `<div class="day col-sm-2">
+          <div class="forecast-day">${formattedDay}</div>
+          <i class="forecast-icon ${forecastIconClass}" alt="${dailyWeather}"></i>
+          <p class="forecast-high-low">
+            <span class="high-temp">${highTemp}°C</span>
+            <span class="low-temp">${lowTemp}°C</span>
+          </p>
+        </div>`;
     }
   });
-  forecastHTML = forecastHTML + `</div>`;
+
+  forecastHTML += `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecastIconClass(dailyWeather) {
+  if (dailyWeather === "Clear") {
+    return "icon-wi_sunny";
+  } else if (dailyWeather === "Clouds") {
+    return "icon-wi_cloudy";
+  } else if (dailyWeather === "Rain") {
+    return "icon-wi_rain";
+  } else if (dailyWeather === "Thunderstorm") {
+    return "icon-wi_thunderstorm";
+  } else if (dailyWeather === "Drizzle") {
+    return "icon-wi_drizzle";
+  } else if (dailyWeather === "Snow") {
+    return "icon-wi_snowflake";
+  } else if (
+    dailyWeather === "Fog" ||
+    dailyWeather === "Haze" ||
+    dailyWeather === "Mist"
+  ) {
+    return "icon-wi_fog";
+  } else if (dailyWeather === "Tornado") {
+    return "icon-wi_tornado";
+  } else {
+    return "icon-wi_mostly-sunny"; // Return mostly sunny icon if the weather condition is not recognized
+  }
+  console.log(dailyWeather);
 }
 
 function getForecast(coordinates) {
